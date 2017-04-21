@@ -28,12 +28,14 @@ Router.route('/results')
 .get(function(req, res) {
   console.log("q: " + req.query.link);
   x(req.query.link + 'search/zip', '.rows', [{
-    offer: ['ul li'],
+    offers: x('ul li', [{
+      offer: ['.result-info .result-title']
+    }]),
     links: x('li .result-info', [{
       link: ['.result-title@href']
     }]),
     images: x('li .swipe-wrap', [{
-      image: ['img@src']
+      image: ['data-index img@src']
     }]),
     detailId: 'data-id'
   }])(function(err, scraped) {

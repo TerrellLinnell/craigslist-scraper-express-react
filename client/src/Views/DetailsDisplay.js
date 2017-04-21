@@ -28,7 +28,7 @@ const DetailsDisplay = (props) => {
                   <div className='images'>
                     {thumbDiv ? thumbDiv : imageDiv}
                   </div>
-                  {bodyDiv}
+                  <h3><em>{bodyDiv}</em></h3>
                 </div>
     Title.push(state)
   }
